@@ -18,6 +18,7 @@ from src.exception import CustomException
 from src.logger import logging
 
 from src.utils import save_object,evaluate_models
+import datetime
 
 @dataclass
 class ModelTrainerConfig:
@@ -31,6 +32,8 @@ class ModelTrainer:
     def initiate_model_trainer(self,train_array,test_array):
         try:
             logging.info("Split training and test input data")
+            current_time = datetime.datetime.now()
+            logging.info(f"Start time: {current_time}")
             X_train,y_train,X_test,y_test=(
                 train_array[:,:-1],
                 train_array[:,-1],
@@ -109,6 +112,8 @@ class ModelTrainer:
             predicted=best_model.predict(X_test)
 
             r2_square = r2_score(y_test, predicted)
+            end_time = datetime.datetime.now()
+            logging.info(f" end time: {end_time}")
             return r2_square
             
 

@@ -4,6 +4,7 @@ import pandas as pd
 
 from sklearn.preprocessing import StandardScaler
 from src.pipeline.predict_pipeline import CustomData,PredictPipeline
+import boto3
 
 application=Flask(__name__)
 
@@ -40,8 +41,17 @@ def predict_datapoint():
         print("after Prediction")
         return render_template('home.html',results=results[0])
     
+def add_permissions():
+        iam = boto3.client('iam')
+        role_name = 'aws-elasticbeanstalk-service-role'
+        policy_arn = 'arn:aws:iam::aws:policy/AWSElasticBeanstalkFullAccess'
+
+        response = iam.attach_role_policy(
+            RoleName=role_name,
+            PolicyArn=policy_arn
+        )
+        print(response)
 
 if __name__=="__main__":
+    add_permissions()
     app.run(host="0.0.0.0")        
-
-

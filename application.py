@@ -10,7 +10,7 @@ application=Flask(__name__)
 
 app=application
 
-## Route for a home page
+# Route for a home page
 
 @app.route('/')
 def index():
@@ -40,7 +40,7 @@ def predict_datapoint():
         results=predict_pipeline.predict(pred_df)
         print("after Prediction")
         return render_template('home.html',results=results[0])
-    
+'''
 def add_permissions():
         iam = boto3.client('iam')
         role_name = 'aws-elasticbeanstalk-service-role'
@@ -51,7 +51,7 @@ def add_permissions():
             PolicyArn=policy_arn
         )
         print(response)
-
+'''
 if __name__=="__main__":
-    add_permissions()
+    # add_permissions()
     app.run(host="0.0.0.0")        

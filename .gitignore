@@ -166,4 +166,4 @@ cython_debug/
 .terraform.lock*
 .terraform.tfstate
 .terraform.tfstate.backup
-secrets.tfvars
+secrets.env

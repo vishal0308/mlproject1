@@ -1,0 +1,50 @@
+{
+  "version": 4,
+  "terraform_version": "1.5.7",
+  "serial": 44,
+  "lineage": "77339d1a-ee77-7159-b435-04ebdec2699f",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "aws_ecr_repository",
+      "name": "dev_ecr_repo",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ecr:us-east-1:288761738565:repository/dev-ecr-repo",
+            "encryption_configuration": [
+              {
+                "encryption_type": "AES256",
+                "kms_key": ""
+              }
+            ],
+            "force_delete": null,
+            "id": "dev-ecr-repo",
+            "image_scanning_configuration": [
+              {
+                "scan_on_push": true
+              }
+            ],
+            "image_tag_mutability": "MUTABLE",
+            "name": "dev-ecr-repo",
+            "registry_id": "288761738565",
+            "repository_url": "288761738565.dkr.ecr.us-east-1.amazonaws.com/dev-ecr-repo",
+            "tags": {
+              "Name": "Dev ECR Repository"
+            },
+            "tags_all": {
+              "Name": "Dev ECR Repository"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxMjAwMDAwMDAwMDAwfX0="
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}

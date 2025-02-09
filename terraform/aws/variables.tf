@@ -20,3 +20,18 @@ variable "my_public_subnet" {
   type        = string
 }
 
+variable "repository" {
+  description = "The GitHub repository to set the secrets for"
+  type        = string
+}
+
+variable "github_owner" {
+  description = "The GitHub owner of the repository"
+  type = string
+}
+
+variable "github_runner_token" {
+  description = "The GitHub runner token"
+  type        = string
+}
+
